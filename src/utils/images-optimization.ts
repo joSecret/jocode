@@ -2,7 +2,7 @@ import { getImage } from 'astro:assets';
 import { transformUrl, parseUrl } from 'unpic';
 
 import type { ImageMetadata } from 'astro';
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from '.astro/types';
 
 type Layout = 'fixed' | 'constrained' | 'fullWidth' | 'cover' | 'responsive' | 'contained';
 
