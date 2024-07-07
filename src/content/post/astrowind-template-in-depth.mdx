@@ -6,7 +6,7 @@ image: https://images.unsplash.com/photo-1534307671554-9a6d81f4d629?ixlib=rb-4.0
 category: Documentation
 tags:
   - astro
-  - tailwind css
+  - style css
   - front-end
 metadata:
   canonical: https://astrowind.vercel.app/astrowind-template-in-depth
@@ -27,7 +27,7 @@ As the name suggests, _AstroWind_ relies on _TailWind_ for styling. Furthermore,
 
 The styling mechanism consists of the following files (all paths are prefixed with `/src/` ):
 
-<DListItem dt="assets/styles/tailwind.css">
+<DListItem dt="assets/styles/style.css">
   This file is essentially an extension of _TailWind's_ base.css. High-level component styles are defined here. Note
   also styling on elements selected by 'attribute' selectors at the bottom of the files, particularly those selected by
   'data' attributes.
@@ -143,12 +143,12 @@ You'll note that the index file imports a lot of components, each one roughly an
 <CallToAction
   callToAction={{
     text: 'Get template',
-    href: 'https://github.com/onwidget/astrowind',
+    href: 'https://github.com/joSecret/jocode',
     icon: 'tabler:download',
   }}
 >
   <Fragment slot="title">
-    Astro + <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+    Astro + <br class="block sm:hidden" /><span class="sm:whitespace-nowrap">PostCSS</span>
   </Fragment>
 
   <Fragment slot="subtitle">

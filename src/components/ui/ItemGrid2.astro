@@ -1,7 +1,6 @@
 ---
 import type { ItemGrid as Props } from '~/types';
 import { Icon } from 'astro-icon/components';
-import { twMerge } from 'tailwind-merge';
 import Button from './Button.astro';
 
 const { items = [], columns, defaultIcon = '', classes = {} } = Astro.props;
@@ -19,8 +18,8 @@ const {
 {
   items && (
     <div
-      class={twMerge(
-        `grid gap-8 gap-x-12 sm:gap-y-8 ${
+      class={
+        (`grid gap-8 gap-x-12 sm:gap-y-8 ${
           columns === 4
             ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
             : columns === 3
@@ -29,25 +28,47 @@ const {
                 ? 'sm:grid-cols-2 '
                 : ''
         }`,
-        containerClass
-      )}
+        containerClass)
+      }
     >
-      {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
-        <div class={twMerge('relative flex flex-col', panelClass, itemClasses?.panel)}>
-          {(icon || defaultIcon) && (
-            <Icon name={icon || defaultIcon} class={twMerge('mb-2 w-10 h-10', defaultIconClass, itemClasses?.icon)} />
-          )}
-          <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
-          {description && (
-            <p class={twMerge('text-muted mt-2', descriptionClass, itemClasses?.description)} set:html={description} />
-          )}
-          {callToAction && (
-            <div class="mt-2">
-              <Button {...callToAction} />
+      {items.map(
+        ({
+          title,
+          description,
+          icon,
+          callToAction,
+          classes: itemClasses = {},
+        }) => (
+          <div
+            class={('relative flex flex-col', panelClass, itemClasses?.panel)}
+          >
+            {(icon || defaultIcon) && (
+              <Icon
+                name={icon || defaultIcon}
+                class={('mb-2 w-10 h-10', defaultIconClass, itemClasses?.icon)}
+              />
+            )}
+            <div class={('text-xl font-bold', titleClass, itemClasses?.title)}>
+              {title}
             </div>
-          )}
-        </div>
-      ))}
+            {description && (
+              <p
+                class={
+                  ('text-muted mt-2',
+                  descriptionClass,
+                  itemClasses?.description)
+                }
+                set:html={description}
+              />
+            )}
+            {callToAction && (
+              <div class='mt-2'>
+                <Button {...callToAction} />
+              </div>
+            )}
+          </div>
+        )
+      )}
     </div>
   )
 }
