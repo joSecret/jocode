@@ -25,9 +25,6 @@ const whenExternalScripts = (items = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: 'https://josecret.github.io/',
-  base: 'jocode/',
-
   output: 'static',
 
   integrations: [
