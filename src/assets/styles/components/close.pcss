@@ -1,0 +1,48 @@
+.btn-close {
+  --btn-c_s: 14px;
+  --btn-c_p: 6px;
+  --btn-c_c: var(--body-c);
+  --btn-c_bg: var(--body-c);
+  --btn-c_bg--s: 14px;
+  --btn-c_o: 1;
+  --btn-c_br: var(--br);
+  --btn-c_img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 1.414z'/%3e%3c/svg%3e");
+
+  box-sizing: content-box;
+  width: var(--btn-c_s);
+  height: var(--btn-c_s);
+  padding: var(--btn-c_p);
+  color: var(--btn-c_c);
+  background-color: var(--btn-c_bg);
+  -webkit-mask-image: var(--btn-c_img);
+  mask-image: var(--btn-c_img);
+  mask-size: var(--btn-c_bg--s);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  border: 0;
+  border-radius: var(--btn-c_br);
+  opacity: var(--btn-c_o);
+
+  &:hover {
+    color: var(--c-black);
+    text-decoration: none;
+    opacity: 0.75;
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem var(--c-black);
+    opacity: 1;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.25;
+  }
+}
+
+.btn-close-white {
+  -webkit-filter: invert(1) grayscale(100%) brightness(200%);
+  filter: invert(1) grayscale(100%) brightness(200%);
+}

@@ -1,0 +1,77 @@
+@import "array-vars.pcss.css";
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: calc(-0.5 * var(--gutter-x));
+  /* margin-top: calc(-1 * var(--gutter-y)); */
+}
+
+.row > * {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-inline: calc(var(--gutter-x) * 0.5);
+  margin-top: var(--gutter-y);
+}
+
+[class*="col-"] {
+  flex: 0 0 auto;
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+.col-auto {
+  width: auto;
+}
+
+@each $col $i in $col-count {
+  .col-$(col) {
+    width: calc((100% / $(col-count-nr)) * $(col));
+  }
+}
+
+@each $size $i in $array-size {
+  .g-$(i),
+  .gx-$(i) {
+    --gutter-x: var(--$(size));
+  }
+
+  .g-$(i),
+  .gy-$(i) {
+    --gutter-y: var(--$(size));
+  }
+}
+
+@each $media in $array-media {
+  @media (--$(media)) {
+    .col-$(media) {
+      flex: 1 0 0%;
+    }
+
+    .col-$(media)-auto {
+      width: auto;
+    }
+
+    @each $col $i in $col-count {
+      .col-$(media)-$(col) {
+        width: calc((100% / $(col-count-nr)) * $(col));
+      }
+    }
+
+    @each $size $i in $array-size {
+      .g-$(media)-$(i),
+      .gx-$(media)-$(i) {
+        --gutter-x: var(--$(size));
+      }
+
+      .g-$(media)-$(i),
+      .gy-$(media)-$(i) {
+        --gutter-y: var(--$(size));
+      }
+    }
+  }
+}

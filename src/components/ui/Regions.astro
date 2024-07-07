@@ -1,0 +1,16 @@
+---
+import './regions.pcss.css';
+
+export interface Props {
+  id: string;
+  class?: Record<string, string>;
+}
+
+const { id, class: className = '', ...rest } = Astro.props;
+
+const renderId = 'region--' + id;
+---
+
+<section class:list={['region', renderId, className]} {...rest}>
+  <slot />
+</section>

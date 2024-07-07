@@ -1,0 +1,28 @@
+---
+import '@stylesComponents/nav.pcss.css';
+import { getPermalink } from '~/utils/permalinks';
+
+const currentPath = Astro.url.pathname;
+---
+
+<ul class='nav nav-segment nav-fill nav-justified'>
+  <li class='nav--item'>
+    <a
+      class:list={['nav--link', { active: currentPath === getPermalink('/') }]}
+      href={getPermalink('/')}
+    >
+      Component
+    </a>
+  </li>
+  <li class='nav--item'>
+    <a
+      class:list={[
+        'nav--link',
+        { active: currentPath === getPermalink('/docs') },
+      ]}
+      href={getPermalink('/docs')}
+    >
+      Docs
+    </a>
+  </li>
+</ul>

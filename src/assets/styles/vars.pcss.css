@@ -1,0 +1,120 @@
+:root {
+  /* Font */
+  --ff: 'Raleway', sans-serif;
+  --ff-code: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  --fs-root: 1rem;
+  --fs-base: 1rem;
+  --fs-sm: 0.875em;
+
+  --fs-lead: calc(var(--fs-base) * 0.125);
+
+  /* Font weight*/
+  --fw-light: 300;
+  --fw-base: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  /* Line height */
+  --lh: 1.5;
+
+  /* Transition */
+  --transition-time: 0.35s;
+  --transition-base: all var(--transition-time) ease-in-out;
+
+  /* Body */
+  --body-c: var(--c-dark, #212529);
+  --body-bg: var(--c-white, #fff);
+
+  /* Link */
+  --link_c: var(--c-primary);
+  --link_c-h: var(--c-secondary);
+  --link-decoration: underline;
+  --link-decoration-h: underline;
+
+  /* Border */
+  --bw: 1px;
+  --bc: var(--c-gray-300);
+  --bs: solid;
+  --br: 0.375rem;
+  --br-sm: 0.25rem;
+  --br-lg: 0.5rem;
+  --br-xl: 1rem;
+  --br-pill: 100rem;
+
+  /* Line */
+  --hr-my: var(--spacer);
+  --hr-c: inherit;
+  --hr-bw: var(--bw);
+  --hr-bc: transparent;
+  --hr-opacity: 0.25;
+
+  /* Heading */
+  --h-mb: 0.5rem;
+  --h-ff: inherit;
+  --h-fstyle: inherit;
+  --h-fw: 500;
+  --h-lh: 1.2;
+  --h-c: inherit;
+
+  --fs-h1: 2.5rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.75rem;
+  --fs-h4: 1.5rem;
+  --fs-h5: 1.25rem;
+  --fs-h6: 1rem;
+
+  /* Font weight */
+  --fw-lighter: lighter;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-bolder: bolder;
+
+  /* Sizes */
+  --spacer: 1rem;
+  --s-0: 0;
+  --s-1: calc(var(--spacer) * 0.25);
+  --s-2: calc(var(--spacer) * 0.5);
+  --s-3: var(--spacer);
+  --s-4: calc(var(--spacer) * 1.5);
+  --s-5: calc(var(--spacer) * 2);
+
+  --gutter: 20px;
+
+  /* z-index */
+  --z-dropdown: 80;
+  --z-sticky: 100;
+  --z-fixed: 120;
+  --z-offcanvas-backdrop: 140;
+  --z-offcanvas: 150;
+  --z-modal-backdrop: 160;
+  --z-modal: 180;
+  --z-popover: 200;
+  --z-tooltip: 220;
+  --z-toast: 240;
+
+  /* theme settings*/
+  --c-white: #ffffff;
+  --c-black: #000000;
+  --c-gray: #6c757d;
+  --c-gray-100: #f7faff;
+  --c-gray-200: #f8fafd;
+  --c-gray-300: #e7eaf3;
+  --c-gray-400: #bdc5d1;
+  --c-gray-500: #97a4af;
+  --c-gray-600: #8c98a4;
+  --c-gray-700: #677788;
+  --c-gray-800: #71869d;
+  --c-gray-900: #1e2022;
+  --c-primary: #377dff;
+  --c-secondary: #dee2e6;
+  --c-success: #198754;
+  --c-warning: #ffc107;
+  --c-info: #0dcaf0;
+  --c-danger: #dc3545;
+  --c-light: var(--c-gray-100);
+  --c-dark: var(--c-gray-900);
+}

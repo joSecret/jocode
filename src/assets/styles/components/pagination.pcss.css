@@ -1,0 +1,111 @@
+.pagination {
+  --pag-px: 15px;
+  --pag-py: 8px;
+  --pag-fs: 1rem;
+  --pag-c: var(--c-gray-600);
+  --pag-bg: transparent;
+  --pag-bw: 0;
+  --pag-bc: transparent;
+  --pag-br: var(--br);
+  --pag-w--min: 40px;
+  --pag-c_h: var(--link_c-h);
+  --pag-bg_h: #e9ecef;
+  --pag-bc_h: #dee2e6;
+  --pag-focus-color: var(--link_c-h);
+  --pag-focus-bg: #e9ecef;
+  --pag-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  --pag-c_a: var(--body-c);
+  --pag-bc_a: var(--pag-bg);
+  --pag-disabled-color: var(--c-gray);
+  --pag-disabled-bg: #fff;
+  --pag-disabled-border-color: #dee2e6;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  gap: var(--pag-gap, 12px);
+  margin-bottom: 0;
+  margin-top: var(--pag-mt, 30px);
+}
+
+.page-link {
+  --link-decoration: none;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--pag-py) var(--pag-px);
+  font-size: var(--pag-fs);
+  color: var(--pag-c);
+  background-color: var(--pag-bg);
+  border: var(--pag-bw) solid var(--pag-bc);
+  border-radius: var(--pag-br);
+  min-width: var(--pag-w--min, inherit);
+  -webkit-transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+
+  &:hover {
+    z-index: 2;
+    color: var(--pag-c_h);
+    background-color: var(--pag-bg_h);
+    border-color: var(--pag-bc_h);
+  }
+
+  &:focus {
+    z-index: 3;
+    color: var(--pag-focus-color);
+    background-color: var(--pag-focus-bg);
+    outline: 0;
+    box-shadow: var(--pag-focus-box-shadow);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-link {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
+
+.page-link.active,
+.active > .page-link {
+  z-index: 3;
+  color: var(--pag-c_a);
+  background-color: var(--pag-bg_a, var(--c-primary));
+  border-color: var(--pag-bc_a);
+}
+.page-link.disabled,
+.disabled > .page-link {
+  color: var(--pag-disabled-color);
+  pointer-events: none;
+  background-color: var(--pag-disabled-bg);
+  border-color: var(--pag-disabled-border-color);
+}
+
+/* add some type of pagination */
+/* .page-item:not(:first-child) .page-link {
+  margin-left: -1px;
+}
+.page-item:first-child .page-link {
+  border-top-left-radius: var(--pag-br);
+  border-bottom-left-radius: var(--pag-br);
+}
+.page-item:last-child .page-link {
+  border-top-right-radius: var(--pag-br);
+  border-bottom-right-radius: var(--pag-br);
+} */
+
+/* .pagination-lg {
+  --pag-px: 1.5rem;
+  --pag-py: 0.75rem;
+  --pag-fs: 1.25rem;
+  --pag-br: 0.5rem;
+} */

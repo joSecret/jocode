@@ -1,0 +1,9 @@
+.alignTop {
+  top: var(--drupal-displace-offset-top, 0);
+}
+
+.min-height {
+  min-height: 100dvh;
+  min-height: calc(100vh - var(--drupal-displace-offset-top, 0px));
+  min-height: calc(100dvh - var(--drupal-displace-offset-top, 0px));
+}

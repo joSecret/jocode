@@ -1,0 +1,78 @@
+.alert {
+  position: relative;
+  padding: var(--alert-py, 1rem) var(--alert-px, 1rem);
+  margin-bottom: var(--alert-mb, 1rem);
+  color: var(--alert-c, inherit);
+  background-color: var(
+    --alert-bg,
+    color-mix(
+      in oklab,
+      var(--alert-c),
+      var(--c-white) var(--alert-bg-percentage, 90%)
+    )
+  );
+  border: var(--alert-b, 1px solid var(--alert-bc, var(--alert-c)));
+  border-radius: var(--alert-br, var(--br));
+
+  & a {
+    --link_c: var(
+      --alert-link-c,
+      color-mix(
+        in oklab,
+        var(--alert-c),
+        var(--c-black) var(--alert-link-c-percentage, 5%)
+      )
+    );
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.alert-primary {
+  --alert-c: var(--alert-primary, var(--c-primary));
+}
+
+.alert-secondary {
+  --alert-c: var(--alert-secondary, var(--c-secondary));
+}
+
+.alert-success {
+  --alert-c: var(--alert-success, var(--c-success));
+}
+
+.alert-info {
+  --alert-c: var(--alert-info, var(--c-info));
+}
+
+.alert-warning {
+  --alert-c: var(--alert-warning, var(--c-warning));
+}
+
+.alert-danger {
+  --alert-c: var(--alert-danger, var(--c-danger));
+}
+
+.alert-dark {
+  --alert-c: var(--alert-dark, var(--c-dark));
+}
+
+.alert-heading {
+  color: var(--alert-heading-c, inherit);
+}
+
+/* ? */
+.alert-dismissible {
+  padding-right: 3rem;
+
+  .btn-close {
+    --btn-c_bg: var(--alert-c);
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    padding: 1.25rem 1rem;
+  }
+}
