@@ -1,5 +1,9 @@
 ---
 import { SITE } from 'astrowind:config';
+
+import { getHomePermalink } from '~/utils/permalinks';
 ---
 
-{SITE?.name}
+<a class='flex items-center' href={getHomePermalink()}>
+  {SITE?.name}
+</a>

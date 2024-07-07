@@ -15,14 +15,18 @@ const {
 const variants = {
   primary: 'btn-primary',
   secondary: 'btn-secondary',
-  tertiary: 'btn btn-tertiary',
-  link: 'cursor-pointer hover:text-primary',
+  tertiary: 'btn-tertiary',
+  link: 'btn-link',
 };
 ---
 
 {
   type === 'button' || type === 'submit' || type === 'reset' ? (
-    <button type={type} class={(variants[variant] || '', className)} {...rest}>
+    <button
+      type={type}
+      class={('btn', variants[variant] || '', className)}
+      {...rest}
+    >
       <Fragment set:html={text} />
       {icon && (
         <Icon

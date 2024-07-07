@@ -1,0 +1,30 @@
+.breadcrumb {
+  --_breadcrumb-item-px: var(--breadcrumb-item-px, 0.5rem);
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  white-space: nowrap;
+
+  padding: var(--breadcrumb-py, 0) var(--breadcrumb-px, 0);
+  margin-bottom: var(--breadcrumb-mb, var(--spacer));
+  font-size: var(--breadcrumb-fs, inherit);
+  background-color: var(--breadcrumb-bg, transparent);
+  border-radius: var(--breadcrumb-br, var(--br));
+}
+
+.breadcrumb-item {
+  & .active {
+    color: var(--breadcrumb-item-c_a, var(--c-gray));
+  }
+
+  & + .breadcrumb-item {
+    padding-left: var(--_breadcrumb-item-px);
+
+    &::before {
+      float: left;
+      padding-right: var(--_breadcrumb-item-px);
+      color: var(--breadcrumb-dc, var(--c-gray));
+      content: var(--breadcrumb-divider, "/");
+    }
+  }
+}

@@ -1,0 +1,135 @@
+@import "../array-vars.pcss.css";
+
+table {
+  --table-c: var(--body-c);
+  --table-bg: transparent;
+  --table-bc: var(--bc);
+
+  --table-accent-bg: transparent;
+
+  --table-striped-c: var(--table-c);
+  --table-striped-bg: color-mix(
+    in oklab,
+    var(--table-bg),
+    var(--table-striped-bg_mix-sec, var(--c-black))
+      var(--table-striped-bg_mix-procent, 5%)
+  );
+
+  --table-active-c: var(--table-c);
+  --table-active-bg: color-mix(
+    in oklab,
+    var(--table-bg),
+    var(--table-active-bg_mix-sec, var(--c-black))
+      var(--table-active-bg_mix-procent, 10%)
+  );
+
+  --table-hover-c: var(--table-c);
+  --table-hover-bg: color-mix(
+    in oklab,
+    var(--table-bg),
+    var(--table-hover-bg_mix-sec, var(--c-black))
+      var(--table-hover-bg_mix-procent, 7.5%)
+  );
+
+  width: 100%;
+  margin-bottom: 1rem;
+  color: var(--table-c);
+  vertical-align: top;
+  border-color: var(--table-bc);
+
+  & > :not(caption) > * > * {
+    padding: 0.5rem;
+    background-color: var(--table-bg, transparent);
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--table-accent-bg);
+  }
+
+  & > tbody {
+    vertical-align: inherit;
+  }
+
+  & > thead {
+    vertical-align: bottom;
+  }
+}
+
+.table-group-divider {
+  border-top: 2px solid;
+}
+
+.caption-top {
+  caption-side: top;
+}
+
+.table-sm > :not(caption) > * > * {
+  padding: 0.25rem;
+}
+
+.table-bordered {
+  & > :not(caption) > * {
+    border-width: 1px 0;
+  }
+
+  & > :not(caption) > * > * {
+    border-width: 0 1px;
+  }
+}
+
+.table-borderless {
+  & > :not(caption) > * > * {
+    border-bottom-width: 0;
+  }
+
+  & > :not(:first-child) {
+    border-top-width: 0;
+  }
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > *,
+.table-striped-columns > :not(caption) > tr > :nth-child(even) {
+  --table-accent-bg: var(--table-striped-bg);
+  color: var(--table-striped-c, var(--table-c));
+}
+
+.table-active {
+  --table-accent-bg: var(--table-active-bg);
+  color: var(--table-active-c);
+}
+
+.table-hover > tbody > tr:hover > * {
+  --table-accent-bg: var(--table-hover-bg);
+  color: var(--table-hover-c);
+}
+
+.table-primary {
+  --table-c: var(--c-white);
+  --table-bg: var(--c-primary);
+  --table-bg_mix-sec: var(--c-white);
+}
+
+.table-secondary {
+  --table-bg: var(--c-secondary);
+}
+
+/* .table-dark {
+  --table-c: #fff;
+  --table-bg: #212529;
+  --table-bc: #373b3e;
+  --table-striped-bg: #2c3034;
+  --table-active-bg: #373b3e;
+  --table-hover-bg: #323539;
+} */
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@each $media in $array-media {
+  @media (--$(media)) {
+    .table-responsive-$(media) {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}

@@ -5,7 +5,10 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["src/*"],
+      "@styles/*": ["src/assets/styles/*"],
+      "@stylesComponents/*": ["src/assets/styles/components/*"],
+      "@layout/*": ["src/layouts/*"],
     }
   }
 }

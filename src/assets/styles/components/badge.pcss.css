@@ -1,0 +1,31 @@
+:where(.badge) {
+  --_badge_tt: 0.15s;
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+
+  padding: var(--badge-py, 4px) var(--badge-px, 8px);
+  font-size: var(--badge-fs, 14px);
+  font-weight: var(--badge-fw, var(--fw-light));
+  color: var(--_badge-c, var(--c-white));
+  background-color: var(--_badge-bg, transparent);
+  border-radius: var(--badge-br, var(--br));
+
+  transition: color var(--badge_tt, var(--_badge_tt)) ease-in-out,
+    background-color var(--badge_tt, var(--_badge_tt)) ease-in-out;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.btn .badge {
+  position: relative;
+  top: -1px;
+}
+
+.badge-primary {
+  --_badge-bg: var(--c-primary);
+}

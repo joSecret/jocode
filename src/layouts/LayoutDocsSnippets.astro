@@ -1,0 +1,57 @@
+---
+import '@styles/layout/layoutDocsSnippets.pcss.css';
+
+import Regions from '~/components/ui/Regions.astro';
+import Logo from '~/components/Logo.astro';
+import Switcher from '~/components/Switcher.astro';
+import Layout from '~/layouts/Layout.astro';
+import Header from '~/components/widgets/Header-mini.astro';
+import Footer from '~/components/widgets/Footer.astro';
+
+import { headerData, footerData } from '~/navigation';
+
+import type { MetaData } from '~/types';
+
+export interface Props {
+  metadata?: MetaData;
+}
+
+const { metadata } = Astro.props;
+---
+
+<Layout metadata={metadata}>
+  <div class='grid-docsSnippets'>
+    <slot name='logo'>
+      <Regions id='logo'>
+        <Logo />
+      </Regions>
+    </slot>
+
+    <slot name='switcher'>
+      <Regions id='switcher'>
+        <Switcher />
+      </Regions>
+    </slot>
+
+    <slot name='navigation'>
+      <Regions id='navigation'> Navigations </Regions>
+    </slot>
+
+    <div class='main-content'>
+      <slot name='header'>
+        <Header {...headerData} isSticky showRssFeed showToggleTheme />
+      </slot>
+
+      <main>
+        <slot />
+
+        <slot name='footer'>
+          <Footer {...footerData} />
+        </slot>
+      </main>
+    </div>
+  </div>
+  <!-- <slot name='announcement'>
+    <Announcement />
+  </slot> -->
+</Layout>
