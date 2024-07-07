@@ -1,7 +1,7 @@
 site:
   name: JoCode
-  site: 'https://josecret.github.io/'
-  base: 'jocode/'
+  site: 'https://josecret.github.io'
+  base: '/jocode'
   trailingSlash: true
 
   googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
