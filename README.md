@@ -56,3 +56,15 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
 
 https://github.com/mickasmt/astro-nomy
+
+
+Personal site exemplu:
+https://www.figma.com/design/NSjtCWqH3V1hti0zNcSsFC/Personalfolio-Portfolio-Template-(Community)?node-id=1-2&t=kPt2tHNGNZqWc7v2-0
+
+https://www.figma.com/design/fsykWohi8njDxKdTHidPZn/Product-Design-portfolio-(Free)-(Community)?node-id=0-1&t=D9S0lH7uCPZPlEWV-0
+
+https://www.youtube.com/watch?v=IHL_r2otyw4
+
+Muzic player https://www.youtube.com/watch?v=LxtSE5XGGrA
+
+Animatii border: https://www.youtube.com/watch?v=ezP4kbOvs_E
