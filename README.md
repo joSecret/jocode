@@ -63,8 +63,29 @@ https://www.figma.com/design/NSjtCWqH3V1hti0zNcSsFC/Personalfolio-Portfolio-Temp
 
 https://www.figma.com/design/fsykWohi8njDxKdTHidPZn/Product-Design-portfolio-(Free)-(Community)?node-id=0-1&t=D9S0lH7uCPZPlEWV-0
 
+
+De adaugat:
+https://www.youtube.com/watch?v=LxtSE5XGGrA
 https://www.youtube.com/watch?v=IHL_r2otyw4
+https://www.youtube.com/watch?v=gbhCAYF0ZM8
 
-Muzic player https://www.youtube.com/watch?v=LxtSE5XGGrA
+Next js UI Components: https://www.youtube.com/watch?v=fth5uiRSCfI
 
-Animatii border: https://www.youtube.com/watch?v=ezP4kbOvs_E
+
+Blog:
+https://www.sitepoint.com/style-html-details-element/
+
+Blog styles:
+https://www.youtube.com/watch?v=ezP4kbOvs_E
+
+
+Theme:
+https://bootstrapmade.com/free-website-templates/
+
+UI Components:
+https://dashflowtemplate.webflow.io/components#notification-bars
+https://htmlstream.com/preview/front-v4.3.1/documentation/accordion.html
+https://www.youtube.com/watch?v=gbhCAYF0ZM8
+
+Personal:
+https://spotlight.tailwindui.com/about

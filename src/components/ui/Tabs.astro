@@ -1,0 +1,222 @@
+---
+import { Code } from 'astro:components';
+
+interface Props {
+  cId: string;
+  title: string;
+  cType?: string;
+  description?: string;
+}
+
+const {
+  cId,
+  title = 'Snippet title',
+  cType = 'docs',
+  description,
+} = Astro.props;
+
+let PreviewSnippet;
+let SnippetRaw;
+
+try {
+  const module = await import(`../../example/${cType}/${cId}/index.astro`);
+  const module2 = await import(`../../example/${cType}/${cId}/index.astro?raw`);
+
+  PreviewSnippet = module.default;
+  SnippetRaw = module2.default;
+} catch (error) {
+  console.error('Error loading the snippet:', error);
+
+  PreviewSnippet = null;
+  SnippetRaw = null;
+}
+
+let HTMLRaw = '';
+if (SnippetRaw.includes('<>')) {
+  HTMLRaw = SnippetRaw.split('<>').pop().split('</>')[0];
+}
+
+let ScriptRaw = '';
+if (SnippetRaw.includes('<script is:inline>')) {
+  ScriptRaw = SnippetRaw.split('<script is:inline>')
+    .pop()
+    .split('</script>')[0];
+}
+
+const CSSSnippet = (
+  await import(`../../example/${cType}/${cId}/style.pcss.css?raw`)
+).default;
+---
+
+<div>
+  Title = {title}
+</div>
+
+<div>
+  Description = {description}
+</div>
+
+<div>
+  Component Id = {cId}
+</div>
+
+<div class='filter'>
+  <h2 class='visually-hidden'>Filter by type of conference</h2>
+  <button class='filter-btn active' data-filter='preview'>Preview</button>
+  {
+    HTMLRaw && (
+      <button class='filter-btn' data-filter='html'>
+        HTML
+      </button>
+    )
+  }
+
+  {
+    ScriptRaw && (
+      <button class='filter-btn' data-filter='js'>
+        JS
+      </button>
+    )
+  }
+
+  {
+    CSSSnippet && (
+      <button class='filter-btn' data-filter='css'>
+        CSS
+      </button>
+    )
+  }
+</div>
+
+<ul class='conference-list'>
+  <li class='conference' data-category='preview'>
+    <PreviewSnippet />
+  </li>
+
+  {
+    HTMLRaw && (
+      <li class='conference' data-category='html' hidden>
+        <Code code={HTMLRaw} lang='html' />
+      </li>
+    )
+  }
+
+  {
+    ScriptRaw && (
+      <li class='conference' data-category='js' hidden>
+        <Code code={ScriptRaw} lang='js' />
+      </li>
+    )
+  }
+
+  {
+    CSSSnippet && (
+      <li class='conference' data-category='css' hidden>
+        <Code code={CSSSnippet} lang='css' />
+      </li>
+    )
+  }
+</ul>
+
+<style>
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .conference-list {
+    /* display: grid; */
+    list-style: none;
+    padding: 0;
+  }
+
+  .conference:not(:last-child):not(:has(+ [hidden])) {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid black;
+  }
+
+  .conference-date::after {
+    content: ' •';
+  }
+
+  .filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    border: 0;
+    padding: 0;
+  }
+
+  .filter-btn {
+    cursor: pointer;
+    text-transform: uppercase;
+    background: transparent;
+    border: 0;
+    border-radius: 0.25rem;
+    padding: 0.25rem 1rem;
+  }
+
+  .filter-btn:hover,
+  .filter-btn:focus {
+    background-color: #ccc;
+  }
+
+  .filter-btn.active {
+    background: black;
+    color: white;
+    box-shadow: 0 0 0.5rem rgb(0 0 0 / 0.2);
+  }
+</style>
+
+<script is:inline>
+  const filterList = document.querySelector('.filter');
+  const filterButtons = filterList.querySelectorAll('.filter-btn');
+  const conferences = document.querySelectorAll('.conference');
+
+  let conferenceIndex = 0;
+
+  conferences.forEach((conference) => {
+    conference.style.viewTransitionName = `conf-${++conferenceIndex}`;
+  });
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+      let confCategory = e.target.getAttribute('data-filter');
+
+      if (!document.startViewTransition) {
+        updateActiveButton(e.target);
+        filterEvents(confCategory);
+      }
+
+      document.startViewTransition(() => {
+        updateActiveButton(e.target);
+        filterEvents(confCategory);
+      });
+    });
+  });
+
+  function updateActiveButton(newButton) {
+    filterList.querySelector('.active').classList.remove('active');
+    newButton.classList.add('active');
+  }
+
+  function filterEvents(filter) {
+    conferences.forEach((conference) => {
+      // get each conferences category
+      let eventCategory = conference.getAttribute('data-category');
+
+      // check if that category matches with the filter
+      if (filter === 'all' || filter === eventCategory) {
+        conference.removeAttribute('hidden');
+      } else {
+        conference.setAttribute('hidden', '');
+      }
+    });
+  }
+</script>

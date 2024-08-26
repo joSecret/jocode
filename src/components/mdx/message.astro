@@ -1,0 +1,38 @@
+---
+const { message } = Astro.props;
+
+const HTMLSnippet = (await import(`./${message}.html?raw`)).default;
+---
+
+<details name='reqs'>
+  <summary>Preview</summary>
+  <article>
+    <Fragment set:html={HTMLSnippet} />
+  </article>
+</details>
+
+<details name='reqs'>
+  <summary>HTML</summary>
+  <article>
+    {HTMLSnippet}
+  </article>
+</details>
+
+<style>
+  details article {
+    opacity: 0;
+  }
+
+  details[open] article {
+    animation: fadeIn 0.75s linear forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>

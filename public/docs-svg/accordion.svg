@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="144" viewBox="0 0 200 144">
+  <defs>
+    <clipPath id="clip-Accordion">
+      <rect width="200" height="144"/>
+    </clipPath>
+  </defs>
+  <g id="Accordion" clip-path="url(#clip-Accordion)">
+    <rect width="200" height="144" fill="#fff"/>
+    <g id="Accrodtion">
+      <path id="Path_1" data-name="Path 1" d="M196,0H4A4,4,0,0,0,0,4V140a4,4,0,0,0,4,4H196a4,4,0,0,0,4-4V4A4,4,0,0,0,196,0Z" fill="#f8fafd"/>
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="159" height="103" rx="3.5" transform="translate(20.5 20.5)" fill="#f8fafd" stroke="#d9ddea" stroke-width="1"/>
+      <path id="Path_2" data-name="Path 2" d="M20.5,88.5h159V120a3.5,3.5,0,0,1-3.5,3.5H24a3.5,3.5,0,0,1-3.5-3.5Z" fill="none" stroke="#d9ddea" stroke-width="1"/>
+      <rect id="Rectangle_2" data-name="Rectangle 2" width="106" height="8" rx="4" transform="translate(33 33)" fill="#71869d"/>
+      <rect id="Rectangle_3" data-name="Rectangle 3" width="106" height="8" rx="4" transform="translate(33 103)" fill="#d9ddea"/>
+      <rect id="Rectangle_4" data-name="Rectangle 4" width="134" height="8" rx="4" transform="translate(33 51)" fill="#d9ddea"/>
+      <rect id="Rectangle_5" data-name="Rectangle 5" width="134" height="8" rx="4" transform="translate(33 69)" fill="#d9ddea"/>
+    </g>
+  </g>
+</svg>

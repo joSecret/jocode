@@ -1,0 +1,82 @@
+---
+import './style.pcss.css';
+---
+
+<>
+  <div class='slider' data-slider>
+    <ul class='slider__track' data-slider-track>
+      <li>
+        <div class='slide'>1</div>
+      </li>
+      <li>
+        <div class='slide'>2</div>
+      </li>
+      <li>
+        <div class='slide'>3</div>
+      </li>
+      <li>
+        <div class='slide'>4</div>
+      </li>
+      <li>
+        <div class='slide'>5</div>
+      </li>
+      <li>
+        <div class='slide'>6</div>
+      </li>
+      <li>
+        <div class='slide'>7</div>
+      </li>
+    </ul>
+
+    <div class='slider__buttons'>
+      <button class='slider__button' data-slider-prev disabled>
+        Previous
+      </button>
+      <button class='slider__button' data-slider-next> Next </button>
+    </div>
+  </div>
+</>
+
+<script is:inline>
+  const slider = document.querySelector('[data-slider]');
+
+  const track = slider.querySelector('[data-slider-track]');
+  const prev = slider.querySelector('[data-slider-prev]');
+  const next = slider.querySelector('[data-slider-next]');
+
+  if (track) {
+    prev.addEventListener('click', () => {
+      next.removeAttribute('disabled');
+
+      track.scrollTo({
+        left: track.scrollLeft - track.firstElementChild.offsetWidth,
+        behavior: 'smooth',
+      });
+    });
+
+    next.addEventListener('click', () => {
+      prev.removeAttribute('disabled');
+
+      track.scrollTo({
+        left: track.scrollLeft + track.firstElementChild.offsetWidth,
+        behavior: 'smooth',
+      });
+    });
+
+    track.addEventListener('scroll', () => {
+      const trackScrollWidth = track.scrollWidth;
+      const trackOuterWidth = track.clientWidth;
+
+      prev.removeAttribute('disabled');
+      next.removeAttribute('disabled');
+
+      if (track.scrollLeft <= 0) {
+        prev.setAttribute('disabled', '');
+      }
+
+      if (track.scrollLeft === trackScrollWidth - trackOuterWidth) {
+        next.setAttribute('disabled', '');
+      }
+    });
+  }
+</script>
