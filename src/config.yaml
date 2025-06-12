@@ -1,10 +1,10 @@
 site:
-  name: JoSecret
-  site: 'https://astrowind.vercel.app'
-  base: '/'
+  name: JoCode
+  site: 'https://joSecret.github.io'
+  base: 'jocode'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: null # Google Site Verification ID, if you have one, you can set it here
 
 # Default SEO metadata
 metadata:
