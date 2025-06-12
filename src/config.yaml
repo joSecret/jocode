@@ -1,7 +1,7 @@
 site:
   name: JoCode
   site: 'https://joSecret.github.io'
-  base: 'jocode'
+  base: '/jocode'
   trailingSlash: false
 
   googleSiteVerificationId: null # Google Site Verification ID, if you have one, you can set it here
