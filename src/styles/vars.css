@@ -1,0 +1,152 @@
+:root {
+  /* Font */
+  --ff: 'Inter Variable', sans-serif;
+  /* --ff-mono: 'AeonikMono', monospace; */
+  --ff-code: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  --fs-root: 1rem;
+  --fs-base: 1rem;
+  --fs-sm: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 20px;
+
+  /* Font weight*/
+  --fw-light: 300;
+  --fw-base: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  /* Line height */
+  --lh: 1.5;
+
+  /* Transition */
+  --tr_time: 0.25s;
+  --ts: all var(--tr_time) ease-in-out;
+
+  /* theme settings */
+  --c-gray-100: #f3f3f3;
+  --c-gray-200: #e9ecef;
+  --c-gray-300: #dbdbdb;
+  --c-gray-400: #090808;
+  --c-gray-500: #adb5bd;
+  --c-gray-600: #646988;
+  --c-gray-700: #333;
+  --c-gray-800: #151515;
+  --c-gray-900: #242424;
+
+  --c-muted: var(--c-gray-600);
+  --c-white: #ffffff;
+  --c-light: var(--c-gray-100);
+  --c-gray: #6c757d;
+  --c-dark: var(--c-gray-900);
+  --c-black: #000000;
+
+  --c-primary: #377dff;
+  --c-accent: #81a1c1;
+  --c-neutral: #4c566a;
+  --c-secondary: #4c9f38;
+  --c-success: #198754;
+  --c-warning: #ffc107;
+  --c-info: #0dcaf0;
+  --c-danger: #dc3545;
+
+  /* Body */
+  --body_c: #2e3440;
+  --body_bg: var(--c-white);
+
+  /* Link */
+  --def--link_c: var(--c-primary);
+  --def--link_c_h: hsl(from var(--def--link_c) h s calc(l - 10));
+  --def--link_c_a: hsl(from var(--def--link_c) h s calc(l - 20));
+  --def--link_d: none;
+  --def--link_d_h: underline;
+
+  /* Border */
+  --bw: 1px;
+  --bc: var(--c-gray-300);
+  --bs: solid;
+  --br: 8px;
+  --br_sm: 6px;
+  --br_lg: 12px;
+  --br_xl: 16px;
+  --br_pill: 100rem;
+
+  /* Line */
+  --hr-my: var(--spacer);
+  --hr-c: inherit;
+  --hr-bw: var(--bw);
+  --hr-bc: transparent;
+  --hr-opacity: 0.25;
+
+  /* Heading */
+  --h_ff: var(--ff);
+  --h_fstyle: inherit;
+  --h_fw: var(--fw-semibold);
+  --h_lh: 1.2;
+  --h_c: var(--c-primary-dark);
+
+  --h1_fs: 56px;
+  --h2_fs: 32px;
+  --h3_fs: 1.75rem;
+  --h4_fs: 1.5rem;
+  --h5_fs: 1.25rem;
+  --h6_fs: 1rem;
+
+  --h1_mb: 0.75em;
+  --h2_mb: 0rem;
+  --h3_mb: 0rem;
+  --h4_mb: 1rem;
+  --h5_mb: 0rem;
+
+  /* Font weight */
+  --fw-lighter: lighter;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-bolder: bolder;
+
+  /* Sizes */
+  --spacer: 12px;
+  --s-0: 0;
+  --s-1: var(--spacer);
+  --s-2: calc(var(--spacer) * 2);
+  --s-3: calc(var(--spacer) * 3);
+  --s-4: calc(var(--spacer) * 4);
+  --s-5: calc(var(--spacer) * 5);
+  --s-p-mob: 20px;
+
+  --gutter: 20px;
+
+  /* z-index */
+  --z-dropdown: 80;
+  --z-sticky: 100;
+  --z-fixed: 120;
+  --z-offcanvas-backdrop: 140;
+  --z-offcanvas: 150;
+  --z-modal-backdrop: 160;
+  --z-modal: 180;
+  --z-popover: 200;
+  --z-tooltip: 220;
+  --z-toast: 240;
+
+  /* blockquote */
+  --_blockquote-fs: var(--blockquote-fs, 20px);
+  --_blockquote-c: var(--blockquote-c, var(--c-primary));
+  --_blockquote-mb: var(--blockquote-mb, var(--spacer));
+  --_blockquote-pl: var(--blockquote-pl, 20px);
+
+  /* navigation */
+  --nav-link_c-default: var(--def--link_c);
+  --nav-link_pb-default: 8px;
+  --nav-link_pi-default: 14px;
+  --nav-link-fw-default: var(--fw-normal);
+
+  /* box-shadow */
+  --sadow-sm: 0 0.2rem 2rem -0.25rem hsla(216, 9%, 44%, 0.1);
+  --sadow: 0 0.5rem 2rem -0.25rem #666e7a1a;
+  --sadow-lg: 0 0.8rem 2rem -0.25rem hsla(216, 9%, 44%, 0.1);
+
+  --drupal_pbs: var(--drupal-displace-offset-top, 0px);
+}

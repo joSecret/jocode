@@ -1,0 +1,188 @@
+@layer components {
+  :where(button, .btn) {
+    --_btn_d: inline-flex;
+    --_btn_vertical-a: middle;
+    --_btn_cursor: auto;
+    --_btn_user-select: auto;
+    --_btn_tr-time: var(--tr_time);
+    --_btn_tr-property: linear;
+    --_btn_bg_h_second_color_mix: var(--btn_bg_h_second_color_mix, black);
+
+    /* Text */
+    --_btn_f-f: var(--btn_f-f, inherit);
+    --_btn_f-s: var(--fs-base);
+    --_btn_f-w: var(--fw-normal);
+    --_btn_l-h: var(--lh);
+    --_btn_t-d: none;
+
+    --_btn_c: var(--btn_c, var(--body_c));
+
+
+    /* Background */
+    --_btn_bg: var(--btn_bg, var(--body_bg));
+
+    /* Padding */
+    --_btn_p-b: 0.5em;
+    --_btn_p-i: 1em;
+
+    /* Border */
+    --_btn_b-w: var(--bw);
+    --_btn_b-c: var(--btn_b-c, var(--_btn_bg));
+    --_btn_b-r: var(--br);
+
+
+    /* Icon */
+    --_btn_ai: var(--btn_ai, center);
+    --_btn_gap: var(--btn_gap, 0.5em);
+
+    /* Hover */
+    --intBtn_c_h: var(--btn_c_h, var(--devBtn_c));
+    --intBtn_bg_h: var(--btn_bg_h, color-mix(
+        in oklab,
+        var(--devBtn_bg),
+        var(--_btn_bg_h_second_color_mix) 15%
+      ));
+    --intBtn_b-c_h: var(--btn_b-c_h, color-mix(
+        in oklab,
+        var(--devBtn_b-c),
+        var(--_btn_bg_h_second_color_mix) 15%
+      ));
+
+    /* Help variables */
+    --devBtn_c: var(--typeBtn_c, var(--_btn_c));
+    --devBtn_bg: var(--typeBtn_bg, var(--_btn_bg));
+    --devBtn_b-c: var(--typeBtn_b-c, var(--_btn_b-c));
+
+    /* Style */
+    color:var(--intBtn_c, var(--devBtn_c));
+    background: var(--intBtn_bg, var(--devBtn_bg));
+
+    display: var(--btn_d, var(--_btn_d));
+    align-items: var(--_btn_ai);
+    gap: var(--_btn_gap);
+    vertical-align: var(--btn_vertical-a, var(--_btn_vertical-a));
+    cursor: var(--btn_cursor, var(--_btn_cursor));
+    user-select: var(--btn_user-select, var(--_btn_user-select));
+    transition: all var(--btn_tr-time, var(--_btn_tr-time)) var(--btn_tr-property, var(--_btn_tr-property));
+
+    font-family: var( );
+    font-size: var(--btn_f-s, var(--_btn_f-s));
+    font-weight: var(--btn-f-w, var(--_btn_f-w));
+    line-height: var(--btn_l-h, var(--_btn_l0h));
+    text-decoration: var(--btn_t-d, var(--_btn_t-d));
+
+    padding-block: var(--btn_p-b, var(--_btn_p-b));
+    padding-inline: var(--btn_p-i, var(--_btn_p-i));
+    border: var(--btn_b-w, var(--_btn_b-w)) solid var(--intBtn_b-c, var(--devBtn_b-c));
+    border-radius: var(--btn_b-r, var(--_btn_b-r));
+
+    &:hover {
+      --intBtn_c: var(--btn_c_h, var(--intBtn_c_h));
+      --intBtn_bg: var(--btn_bg_h, var(--intBtn_bg_h));
+      --intBtn_b-c: var(--btn_b-c_h, var(--intBtn_b-c_h));
+    }
+
+    &:is(:disabled, .disabled) {
+      pointer-events: none;
+    }
+
+    &:focus-visible {
+      outline: 0;
+    }
+
+    &:is(.active, :active, .is-active, [open] > &) {
+      --__btn_c: var(--btn_c_a);
+      --__btn_bg: var(--btn_bg_a, color-mix(
+        in oklab,
+        var(--_btn_bg),
+        black 30%
+      ));
+      --__btn_b-c: var(--btn_b-c_a);
+    }
+
+    &.btn-i {
+      --_btn-i_svg_minh: var(--btn-i_svg_minh, calc(1em * var(--_btn_lh)));
+      --_btn_d: inline-flex;
+
+      align-items: var(--_btn_ai);
+      gap: var(--_btn_gap);
+
+      svg {
+        min-height: var(--_btn-i_svg_minh);
+      }
+    }
+
+    &.btn-i--only {
+      justify-content: center;
+    }
+  }
+
+
+  /* Button size */
+  .btn-lg {
+    --btn_f-s: var(--btn-lg_fs, 1.25rem);
+    --btn_p-b: var(--btn-lg_pb, 0.75em);
+    --btn_p-i: var(--btn-lg_pi, 1.5em);
+    --btn_b-r: var(--btn-lg_br, calc(var(--br) * 1.25));
+  }
+
+  .btn-sm {
+    --btn_f-s: var(--btn-sm_fs, 0.875rem);
+    --btn_p-b: var(--btn-sm_pb, 0.3em);
+    --btn_p-i: var(--btn-sm_pi, 0.5em);
+    --btn_b-r: var(--btn-sm_br, calc(var(--br) * 0.85));
+  }
+
+  .btn-rounded {
+    --_btn-rounde_p: var(--btn-rounded_p, var(--_btn_p-b));
+    --btn_b-r: 50em;
+    --btn_p-i: var(--_btn-rounde_p);
+
+    width: calc(
+      var(--_btn-i_svg_minh) + var(--_btn-rounde_p) * 2 + var(--_btn_b-w) * 2
+    );
+  }
+
+  /* Button styles */
+  .btn-primary {
+    --_btn_c: var(--primary_btn_c, var(--c-white));
+    --_btn_bg: var(--c-primary);
+  }
+
+  .btn-secondary {
+    --btn_c: var(--secondary_btn_c, var(--c-white));
+    --btn_bg: var(--c-secondary);
+  }
+
+  .btn-success {
+    --btn_c: var(--success_btn_c, var(--c-white));
+    --btn_bg: var(--c-success);
+  }
+
+  .btn-danger {
+    --btn_c: var(--danger_btn_c, var(--c-white));
+    --btn_bg: var(--c-danger);
+  }
+
+  .btn-warning {
+    --btn_c: var(--warning_btn_c, var(--c-white));
+    --btn_bg: var(--c-warning);
+  }
+
+  .btn-info {
+    --btn_c: var(--info_btn_c, var(--c-white));
+    --btn_bg: var(--c-info);
+  }
+
+  .btn-dark {
+    --btn_c: var(--dark_btn_c, var(--c-white));
+    --btn_bg: var(--c-dark);
+    --_btn_bg_h_second_color_mix: white;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn {
+      transition: none;
+    }
+  }
+}
