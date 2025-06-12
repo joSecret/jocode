@@ -22,6 +22,8 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
+  site: 'https://joSecret.github.io',
+  base: 'jocode',
 
   integrations: [
     sitemap(),
