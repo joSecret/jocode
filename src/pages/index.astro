@@ -1,4 +1,6 @@
 ---
+import { Accordion, AccordionItem } from 'jo-components-astro';
+
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
@@ -11,6 +13,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Button from '~/components/ui/Button.astro';
 
 const metadata = {
   title: 'JoSecret - Personal Portfolio',
@@ -20,6 +23,55 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
+
+  <div class="grid-demo--loc">
+    
+  </div>
+  <Button href='/blog'>Test</Button>
+  <Button variant='link' href='/blog'>Test</Button>
+
+  <Accordion>
+    <AccordionItem name='exclusive' title='What is WCAG and why is it important?' open>
+      <p>
+        WCAG (Web Content Accessibility Guidelines) is a set of internationally recognized standards for web
+        accessibility. Following WCAG ensures your website is usable by people with various disabilities, including
+        visual, auditory, physical, and cognitive impairments. It's important not just for accessibility, but also for
+        legal compliance, SEO, and reaching a wider audience.
+      </p>
+    </AccordionItem>
+    <AccordionItem name='exclusive' title="What's the difference between ARIA labels and alt text?">
+      <p>
+        Alt text is specifically for describing images to screen reader users, while ARIA labels (aria-label,
+        aria-labelledby) can describe any element on a page. Alt text is HTML's native way to provide alternative text
+        for images, while ARIA labels are part of the ARIA specification that helps make dynamic content and advanced UI
+        controls more accessible.
+      </p>
+    </AccordionItem>
+    <AccordionItem name='exclusive' title='Why is keyboard navigation important?'>
+      <p>
+        Keyboard navigation is essential for users who can't use a mouse, including people with motor disabilities,
+        visual impairments, or those who simply prefer keyboard controls. A website should be fully operable using only
+        a keyboard, with visible focus indicators and logical tab order. This includes being able to access all
+        interactive elements and navigate through content efficiently.
+      </p>
+    </AccordionItem>
+    <AccordionItem name='exclusive' title='What is a sufficient color contrast ratio?'>
+      <p>
+        According to WCAG 2.2 AA standards, text should have a minimum contrast ratio of 4.5:1 against its background
+        for regular text, and 3:1 for large text (18pt or 14pt bold). For non-text elements like icons or buttons, a
+        minimum ratio of 3:1 is required. This ensures content is readable for users with visual impairments or color
+        blindness.
+      </p>
+    </AccordionItem>
+    <AccordionItem name='exclusive' title='How do I make custom components accessible?'>
+      <p>
+        To make custom components accessible, focus on these key aspects: use semantic HTML where possible, implement
+        proper keyboard support, add appropriate ARIA attributes, manage focus when needed, and ensure adequate color
+        contrast. Always test with screen readers and keyboard navigation. Consider using established design patterns
+        from the <a href='https://www.w3.org/WAI/ARIA/apg/patterns/'>ARIA Authoring Practices Guide</a>.
+      </p>
+    </AccordionItem>
+  </Accordion>
 
   <Hero
     actions={[
